@@ -1,7 +1,6 @@
 use axum::{http::StatusCode, response::IntoResponse};
 use sqlx::{Executor, Pool, Sqlite};
 
-
 pub async fn db () -> Pool<Sqlite> {
     let opt = sqlx::sqlite::SqliteConnectOptions::new().filename("data/app.db").create_if_missing(true);
     let pool = sqlx::sqlite::SqlitePool::connect_with(opt).await.unwrap();

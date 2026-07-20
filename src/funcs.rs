@@ -1,5 +1,6 @@
 use axum::{http::StatusCode, response::IntoResponse};
 use sqlx::{Executor, Pool, Sqlite};
+use chrono::{DateTime, Utc};
 
 pub async fn db () -> Pool<Sqlite> {
     let opt = sqlx::sqlite::SqliteConnectOptions::new().filename("data/app.db").create_if_missing(true);
@@ -13,6 +14,11 @@ pub async fn db () -> Pool<Sqlite> {
     ").await.unwrap();
 
     pool
+} 
+
+pub fn format_date(date: DateTime<Utc>) -> String {
+  let new_date = date.format("%d-%b-%Y %H:%M:%S %P %z");
+  return new_date.to_string();
 } 
 
 pub async fn ping() -> impl IntoResponse {

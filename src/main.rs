@@ -4,12 +4,18 @@ use axum::{routing::get, Router};
 use sqlx::{Pool, Sqlite};
 
 mod funcs;
+mod models;
 
 
 fn app(_pool: Pool<Sqlite>) -> Router {
     Router::new()
     .route("/ping", get(funcs::ping))
     /* 
+    .route("/login")
+    .route("/create-account")
+    .route("/reset-password")
+    .route("/refresh/acces-token")
+    .route("/refresh/refresh-token")
     .route("/tasks/{user-id}")
     .route("/tests/{user-id}")
     .route("/user/{id}")

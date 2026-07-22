@@ -49,7 +49,7 @@ R{MAC-Adress}{creation data + time}{random 15 digit alpha numeric codes}
     main: bool
     change: date_time(custom)
 
-#### lesson 
+#### lesson
 
     id: UUID
     owner id: UUID
@@ -59,7 +59,7 @@ R{MAC-Adress}{creation data + time}{random 15 digit alpha numeric codes}
     room: str
     change: date_time(custom)
 
-#### task 
+#### task
 
     id: UUID
     owner id: UUID
@@ -83,7 +83,7 @@ R{MAC-Adress}{creation data + time}{random 15 digit alpha numeric codes}
     notifications: (hmm)
     change: date_time(custom)
 
-#### config 
+#### config
 
     user id: UUID
     mode: str
